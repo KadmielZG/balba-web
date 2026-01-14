@@ -1,0 +1,14 @@
+.card-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    overflow-x: auto;      /* 👈 scroll horizontal */
+}
+
+.no-results {
+  color: #64748b;
+  font-size: 18px;
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+}

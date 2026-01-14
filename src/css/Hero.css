@@ -1,0 +1,39 @@
+.hero {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 64px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 480px){
+  .hero{
+    height: 38vh;
+  }
+
+  .hero-overlay {
+    padding: 0 12px;
+  }
+}

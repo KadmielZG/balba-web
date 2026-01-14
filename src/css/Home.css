@@ -1,0 +1,10 @@
+.servicios-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+servicios-text{
+    padding: 0;
+    font-size: 70px;
+}
