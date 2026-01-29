@@ -1,13 +1,21 @@
 .card-item{
     width: 200px;
-    min-width: 200px;   /* 👈 ESTO ES LA CLAVE */
+    min-width: 200px;   /*  */
     padding: 10px;
     border: 2px solid gray;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     margin: 10px;
-    flex-shrink: 0;     /* 👈 Y ESTO TAMBIÉN */
+    flex-shrink: 0;     /* */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card-item:hover {
+  transform: scale(1.03);
 }
 
 .card-img {
@@ -15,4 +23,9 @@
   aspect-ratio: 4 / 3;   /* proporción bonita */
   object-fit: cover;    /* recorta sin deformar */
   border-radius: 10px;
+}
+
+.titulo{
+  font-size: 25px;
+  margin: 0;
 }

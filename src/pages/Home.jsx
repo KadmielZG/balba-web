@@ -9,20 +9,23 @@ import taxiImg from "../assets/taxi.jpg";
 import transferImg from "../assets/transfer.jpg";
 import yateImg from "../assets/yate.jpg";
 import pescaImg from "../assets/pesca.jpg";
+import Modal from "../components/Modal";
+
 
 
 const cardsData = [
-  { id: 1, title: "Snorkel", image: snorkelImg, description: "Lorem ipsum xdxdxd" },
-  { id: 2, title: "Car rental", image: rentImg, description: "Lorem ipsum xdxdxd" },
-  { id: 3, title: "Taxi", image: taxiImg, description: "Lorem ipsum xdxdxd" },
-  { id: 4, title: "Transfer", image: transferImg, description: "Lorem ipsum xdxdxd" },
-  { id: 5, title: "Yate", image: yateImg, description: "Lorem ipsum xdxdxd" },
-  { id: 6, title: "Pesca deportiva", image: pescaImg, description: "Lorem ipsum xdxdxd" }
+  { id: 1, title: "Snorkel", image: snorkelImg,descripcion: "Explora arrecifes y vida marina con guías expertos." },
+  { id: 2, title: "Car rental", image: rentImg, descripcion: "Renta de autos económicos para toda la familia" },
+  { id: 3, title: "Taxi", image: taxiImg, descripcion: "Servicio de taxi seguro y puntual." },
+  { id: 4, title: "Transfer", image: transferImg, descripcion:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, " },
+  { id: 5, title: "Yate", image: yateImg, descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " },
+  { id: 6, title: "Pesca deportiva", image: pescaImg, descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " }
 ];
 
 
 export default function Home() {
   const [search, setSearch] = useState("");
+  const [selectedCard,setSelectedCard] = useState(null);
 
   const filteredCards = cardsData.filter(card =>
     card.title.toLowerCase().includes(search.toLowerCase())
@@ -42,7 +45,7 @@ export default function Home() {
               key={card.id}
               image={card.image}
               title={card.title}
-              description={card.description}
+              onClick={()=>setSelectedCard(card)}
             />
           ))
         ) : (
@@ -51,6 +54,11 @@ export default function Home() {
           </p>
         )}
       </CardContainer>
+{/* MODAL */}
+      {selectedCard && (
+        <Modal card={selectedCard} onClose={() => setSelectedCard(null)} />
+      )}
+
     </>
   );
 }
